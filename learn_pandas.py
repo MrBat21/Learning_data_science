@@ -1,10 +1,6 @@
 import pandas as pd
 
-df = pd.DataFrame([[1,2,3],[4,5,6],[7,8,9]], columns=["A", "B", "C"], index =["x", "y", "z"])
+coffee = pd.read_csv('C:/Users/Admin/OneDrive/Documents/Coding/Python/Learning_data_science/warmup_data/coffee.csv')
 
-head = df.head
-info = df.info()
-describe = df.describe()
-shape = df.shape
-numuniqe = df.nunique()
-print(numuniqe)
+print(coffee.loc[4:7, ["Units Sold"]])
+coffee.iloc#[Rows, Columns] #only using index
