@@ -1,6 +1,13 @@
 import pandas as pd
 
-coffee = pd.read_csv('C:/Users/Admin/OneDrive/Documents/Coding/Python/Learning_data_science/warmup_data/coffee.csv')
+bios = pd.read_excel('C:/Users/Admin/OneDrive/Documents/Coding/Python/Learning_data_science/warmup_data/olympics-data.xlsx')
+bios_new = bios.copy()
 
-print(coffee.loc[4:7, ["Units Sold"]])
-coffee.iloc#[Rows, Columns] #only using index
+bios_new['first_name'] = bios_new['name'].str.split(' ').str[0]
+#print(bios_new)
+
+bios_new['born_date'] = pd.to_datetime(bios_new['born_date'])
+#print(bios_new.info())
+
+bios_new['born_year'] = bios_new['born_date'].dt.year
+print(bios_new)
